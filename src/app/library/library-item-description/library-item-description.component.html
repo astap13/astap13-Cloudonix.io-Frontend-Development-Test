@@ -1,0 +1,12 @@
+<div class="contaienr">
+    <div class="cards-container">
+        <div class="card-item">
+            <p>Id: {{ (item$ | async)?.id }}</p>
+            <p>Name: {{ (item$ | async)?.name }}</p>
+            <p>description: {{ (item$ | async)?.description }}</p>
+            <p>sku: {{ (item$ | async)?.sku }}</p>
+            <p>cost: {{ (item$ | async)?.sku }}</p>
+            <p>profile: {{ (item$ | async)?.profile!.type }}</p>
+        </div>
+    </div>
+</div>

@@ -1,18 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
-
-export interface ProductProfile {
-  type: string;
-}
-
-export interface Product {
-  id: number;
-  name: string;
-  description: string;
-  sku: string;
-  cost: number;
-  profile: ProductProfile;
-}
+import { Router } from '@angular/router';
+import { Product } from './product.interface';
 
 @Component({
   selector: 'app-library',
@@ -20,7 +9,8 @@ export interface Product {
   styleUrl: './library.component.scss'
 })
 export class LibraryComponent implements OnInit{
-  constructor(public api: ApiService){}
+
+  constructor(public api: ApiService, public router: Router){}
 
   allProducts!: Array<Product>
 
@@ -32,5 +22,9 @@ getAllProducts() {
   this.api.getAllProducts().subscribe(result => {
     this.allProducts = result
   })
+}
+
+navigateToItem(itemId: number) {
+  this.router.navigate(['library', itemId]);
 }
 }
