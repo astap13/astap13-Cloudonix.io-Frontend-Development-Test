@@ -23,12 +23,22 @@ export class ApiService {
     );
   }
 
-  getProductById(id: string): Observable<any> {
+  getProductById(id:  string | number): Observable<any> {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authToken}`
     });
 
     return this.http.get(`${this.apiUrl}/items/${id}`, { headers }).pipe(
+      catchError((error: HttpErrorResponse) => this.handleError(error))
+    );
+  }
+  
+  delProductById(id: string | number): Observable<void> {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.authToken}`
+    });
+
+    return this.http.delete<void>(`${this.apiUrl}/items/${id}`, { headers }).pipe(
       catchError((error: HttpErrorResponse) => this.handleError(error))
     );
   }
