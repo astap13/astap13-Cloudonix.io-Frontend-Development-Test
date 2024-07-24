@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss']
 })
-export class SignInComponent {
+export class SignInComponent{
+  constructor(private router: Router) {}
 onSubmit() {
-throw new Error('Method not implemented.');
+this.router.navigate(['/library'])
 }
   name = new FormControl('', Validators.required);
 
