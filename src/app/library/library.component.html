@@ -1,1 +1,10 @@
-<p>library works!</p>
+<div class="contaienr">
+    <div class="cards-container">
+        <div *ngFor="let productItem of allProducts" class="card-item">
+            <p>{{productItem.id}}</p>
+            <p>{{productItem.sku}}</p>
+            <p >{{productItem.name}}</p>
+            <p>{{productItem.cost}}</p>
+        </div>
+    </div>
+</div>
