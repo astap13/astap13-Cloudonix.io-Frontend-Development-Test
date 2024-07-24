@@ -6,13 +6,9 @@
             <p>SKU: {{productItem.sku}}</p>
             <p>Name: {{productItem.name}}</p>
             <p>Price: {{productItem.cost}}</p></a><div class="button-container">
-                <button (click)="editProduct(productItem.id)">Edit</button>
-                <button (click)="deleteProduct(productItem.id)">Delete</button>
+                <button class="btn" (click)="editProduct(productItem.id)">Edit</button>
+                <button class="btn" (click)="deleteProduct(productItem.id)">Delete</button>
             </div>
-        
-            
-        
-        </div>
-            
+        </div>   
     </div>
 </div>
