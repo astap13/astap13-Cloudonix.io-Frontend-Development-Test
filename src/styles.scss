@@ -102,7 +102,7 @@ select {
     transition: transform 0.2s, box-shadow 0.2s;
   }
   
-  .card-item:hover {
+  .card-item-hover:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   }
@@ -135,7 +135,6 @@ select {
 
 
 button{
-  margin-top: 20px;
   padding: 5px 10px;
   background-color: #3498db;
   color: white;
@@ -161,15 +160,18 @@ button[type="submit"] {
   background-color: #4CAF50;
 }
 
-
-
-  
+.btn-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
 
 // input styles
 
 form {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 label {

@@ -1,11 +1,11 @@
 <div class="contaienr">
     <div class="cards-container">
-        <div *ngFor="let productItem of allProducts" class="card-item">
+        <div *ngFor="let productItem of allProducts" class="card-item card-item-hover">
             <a [routerLink]="['/library', productItem.id] ">
                 <p>Index: {{productItem.id}}</p>
             <p>SKU: {{productItem.sku}}</p>
             <p>Name: {{productItem.name}}</p>
-            <p>Price: {{productItem.cost}}</p></a><div class="button-container">
+            <p>Price: {{productItem.cost}}</p></a><div class="btn-container">
                 <button class="btn" [routerLink]="['/library/edit', productItem.id]">Edit</button>
                 <button class="btn" (click)="deleteProduct(productItem.id)">Delete</button>
             </div>
