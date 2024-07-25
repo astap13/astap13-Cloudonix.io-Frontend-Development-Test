@@ -1,14 +1,11 @@
 <div class="container">
-    <form [formGroup]="createProductForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="editProductForm" (ngSubmit)="onSubmit()">
         <label for="name">Name</label>
         <input type="text" id="name" formControlName="name" />
         
         <label for="description">Description</label>
         <input type="text" id="description" formControlName="description" />
         
-        <label for="sku">SKU</label>
-        <input type="text" id="sku" formControlName="sku" />
-
         <label for="cost">Cost</label>
         <input step="0.01" min="0" type="number" id="cost" formControlName="cost" />
         

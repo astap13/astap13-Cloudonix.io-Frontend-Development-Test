@@ -6,12 +6,12 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LibraryItemDescriptionComponent } from './library/components/library-item-description/library-item-description.component';
 import { HeaderComponent } from './core/header/header.component';
+import { LibraryItemEditModeComponent } from './library/components/library-item-edit-mode/library-item-edit-mode.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LibraryItemDescriptionComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

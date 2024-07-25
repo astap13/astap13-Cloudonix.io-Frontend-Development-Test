@@ -57,6 +57,19 @@ export class ApiService {
     );
   }
 
+  updateProduct(id: number | string, data: Product): Observable<any> {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.authToken}`,
+      'Content-Type': 'application/json'
+    });
+
+    const jsonData = JSON.stringify(data);
+
+    return this.http.patch(`${this.apiUrl}/items/${id}`, jsonData, { headers }).pipe(
+      catchError((error: HttpErrorResponse) => this.handleError(error))
+    );
+  }
+
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       console.error('An error occurred:', error.error.message);
