@@ -1,5 +1,7 @@
 export interface ProductProfile {
     type: string;
+    available?: boolean | string;
+    backlog: string
   }
   
   export interface Product {

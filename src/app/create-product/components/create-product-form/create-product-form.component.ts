@@ -24,7 +24,9 @@ export class CreateProductFormComponent {
       sku: ['', Validators.required],
       cost: [0, [Validators.required, Validators.min(0), Validators.pattern(/^\d+(\.\d{1,2})?$/)]],
       profile: this.fb.group({
-        type: 'furniture'
+        type: 'furniture',
+        available: true,
+        backlog: ''
       })
     });
   }

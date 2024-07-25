@@ -65,6 +65,8 @@ export class ApiService {
 
     const jsonData = JSON.stringify(data);
 
+    console.log(jsonData)
+
     return this.http.patch(`${this.apiUrl}/items/${id}`, jsonData, { headers }).pipe(
       catchError((error: HttpErrorResponse) => this.handleError(error))
     );

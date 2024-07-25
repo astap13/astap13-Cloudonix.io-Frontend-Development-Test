@@ -7,6 +7,8 @@
             <p>sku: {{ (item$ | async)?.sku }}</p>
             <p>cost: {{ (item$ | async)?.cost }}</p>
             <p>profile: {{ (item$ | async)?.profile!.type }}</p>
+            <p>available: {{ (item$ | async)?.profile!.available }}</p>
+            <p>backlog: {{ (item$ | async)?.profile!.backlog }}</p>
         </div>
     </div>
 </div>

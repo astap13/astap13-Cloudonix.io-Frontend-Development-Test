@@ -28,7 +28,9 @@ export class LibraryItemEditModeComponent implements OnInit {
       description: ['', Validators.required],
       cost: [0, [Validators.required, Validators.min(0), Validators.pattern(/^\d+(\.\d{1,2})?$/)]],
       profile: this.fb.group({
-        type: 'furniture'
+        type: 'furniture',
+        available: true,
+        backlog: ''
       })
     });
   }
@@ -49,7 +51,9 @@ export class LibraryItemEditModeComponent implements OnInit {
         sku: product.sku,
         cost: product.cost,
         profile: {
-          type: product.profile?.type
+          type: product.profile?.type,
+          available:product.profile?.available,
+          backlog: product.profile?.backlog
         }
       });
     });
@@ -65,6 +69,8 @@ export class LibraryItemEditModeComponent implements OnInit {
       if (formValue.description !== this.product.description) updatedProduct.description = formValue.description;
       if (formValue.cost !== this.product.cost) updatedProduct.cost = formValue.cost;
       if (formValue.profile.type !== this.product.profile?.type) updatedProduct.profile = { type: formValue.profile.type };
+      if (formValue.profile.available !== this.product.profile?.available) updatedProduct.profile = { available: formValue.profile.available };
+      if (formValue.profile.backlog !== this.product.profile?.backlog) updatedProduct.profile = { backlog: formValue.profile.backlog };
   
       this.api.updateProduct(this.itemId, updatedProduct).subscribe(
         () => {
