@@ -131,4 +131,68 @@ select {
     color: #28a745; 
     font-weight: bold;
   }
+///btn styles
+
+
+button{
+  margin-top: 20px;
+  padding: 5px 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+button[type="submit"] {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+}
+
+
+
   
+
+// input styles
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+  margin-left: 5px;
+}
+
+
+
