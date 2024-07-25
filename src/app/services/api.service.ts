@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { throwError, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { Product } from '../library/product.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +40,19 @@ export class ApiService {
     });
 
     return this.http.delete<void>(`${this.apiUrl}/items/${id}`, { headers }).pipe(
+      catchError((error: HttpErrorResponse) => this.handleError(error))
+    );
+  }
+
+  createProduct(data: Product): Observable<any> {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.authToken}`,
+      'Content-Type': 'application/json'
+    });
+
+    const jsonData = JSON.stringify(data);
+
+    return this.http.post(`${this.apiUrl}/items`, jsonData, { headers }).pipe(
       catchError((error: HttpErrorResponse) => this.handleError(error))
     );
   }

@@ -1,1 +1,27 @@
-<p>create-product-form works!</p>
+<div class="container">
+    <form [formGroup]="createProductForm" (ngSubmit)="onSubmit()">
+        <label for="name">Name</label>
+        <input type="text" id="name" formControlName="name" />
+        
+        <label for="description">Description</label>
+        <input type="text" id="description" formControlName="description" />
+        
+        <label for="sku">SKU</label>
+        <input type="text" id="sku" formControlName="sku" />
+
+        <label for="cost">Cost</label>
+        <input type="number" id="cost" formControlName="cost" />
+        
+        <div formGroupName="profile">
+            <label for="type">Type</label>
+            <select formControlName="type" id="type">
+              <option value="furniture">Furniture</option>
+              <option value="equipment">Equipment</option>
+              <option value="stationary">Stationary</option>
+              <option value="part">Part</option>
+            </select>
+        </div>
+        
+        <button type="submit">Submit</button>
+    </form>
+</div>
