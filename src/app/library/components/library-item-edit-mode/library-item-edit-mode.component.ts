@@ -13,10 +13,10 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class LibraryItemEditModeComponent implements OnInit {
   editProductForm: FormGroup;
   product!: Product;
-  
+
   item$!: Observable<Product>;
-  itemId!: number; 
-  
+  itemId!: number;
+
   constructor(
     private route: ActivatedRoute,
     private fb: FormBuilder,
@@ -35,6 +35,10 @@ export class LibraryItemEditModeComponent implements OnInit {
     });
   }
 
+  get profileForm(): FormGroup | null {
+    return this.editProductForm.get('profile') as FormGroup;
+  }
+
   ngOnInit() {
     this.item$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
@@ -48,11 +52,10 @@ export class LibraryItemEditModeComponent implements OnInit {
       this.editProductForm.patchValue({
         name: product.name,
         description: product.description,
-        sku: product.sku,
         cost: product.cost,
         profile: {
           type: product.profile?.type,
-          available:product.profile?.available,
+          available: product.profile?.available,
           backlog: product.profile?.backlog
         }
       });
@@ -62,16 +65,16 @@ export class LibraryItemEditModeComponent implements OnInit {
   onSubmit() {
     if (this.editProductForm.valid) {
       const formValue = this.editProductForm.value;
-      
+
       const updatedProduct: any = {};
-  
+
       if (formValue.name !== this.product.name) updatedProduct.name = formValue.name;
       if (formValue.description !== this.product.description) updatedProduct.description = formValue.description;
       if (formValue.cost !== this.product.cost) updatedProduct.cost = formValue.cost;
       if (formValue.profile.type !== this.product.profile?.type) updatedProduct.profile = { type: formValue.profile.type };
       if (formValue.profile.available !== this.product.profile?.available) updatedProduct.profile = { available: formValue.profile.available };
       if (formValue.profile.backlog !== this.product.profile?.backlog) updatedProduct.profile = { backlog: formValue.profile.backlog };
-  
+
       this.api.updateProduct(this.itemId, updatedProduct).subscribe(
         () => {
           this.router.navigate(['/library', this.itemId]);
@@ -82,5 +85,4 @@ export class LibraryItemEditModeComponent implements OnInit {
       );
     }
   }
-  
 }
