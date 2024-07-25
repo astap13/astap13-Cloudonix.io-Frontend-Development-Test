@@ -1,0 +1,19 @@
+<div>
+  <form [formGroup]="editProductForm" (ngSubmit)="onSubmit()">
+    <label for="name">Name</label>
+    <input type="text" id="name" formControlName="name" />
+
+    <label for="description">Description</label>
+    <input type="text" id="description" formControlName="description" />
+
+    <label for="cost">Cost</label>
+    <input step="0.01" min="0" type="number" id="cost" formControlName="cost" />
+
+    <app-library-item-edit-mode-profile
+      *ngIf="profileForm"
+      [profileForm]="profileForm"
+    ></app-library-item-edit-mode-profile>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
