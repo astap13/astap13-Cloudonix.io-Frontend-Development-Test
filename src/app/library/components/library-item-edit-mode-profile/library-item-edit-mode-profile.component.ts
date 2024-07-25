@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-library-item-edit-mode-profile',
   templateUrl: './library-item-edit-mode-profile.component.html',
-  styleUrl: './library-item-edit-mode-profile.component.scss'
+  styleUrl: './library-item-edit-mode-profile.component.scss',
 })
 export class LibraryItemEditModeProfileComponent {
   @Input() profileForm!: FormGroup;
@@ -16,7 +16,7 @@ export class LibraryItemEditModeProfileComponent {
       this.profileForm = this.fb.group({
         type: 'furniture',
         available: true,
-        backlog: ''
+        backlog: '',
       });
     }
   }

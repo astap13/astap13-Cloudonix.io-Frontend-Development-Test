@@ -6,12 +6,12 @@ import { LibraryItemEditModeComponent } from './components/library-item-edit-mod
 
 const routes: Routes = [
   { path: '', component: LibraryComponent },
-  { path: ':id', component: LibraryItemDescriptionComponent}, 
-  { path: 'edit/:id', component: LibraryItemEditModeComponent}, 
+  { path: ':id', component: LibraryItemDescriptionComponent },
+  { path: 'edit/:id', component: LibraryItemEditModeComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class LibraryRoutingModule { }
+export class LibraryRoutingModule {}

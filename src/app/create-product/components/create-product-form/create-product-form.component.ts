@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-create-product-form',
   templateUrl: './create-product-form.component.html',
-  styleUrls: ['./create-product-form.component.scss']
+  styleUrls: ['./create-product-form.component.scss'],
 })
 export class CreateProductFormComponent {
   createProductForm: FormGroup;
@@ -15,19 +15,26 @@ export class CreateProductFormComponent {
 
   constructor(
     private fb: FormBuilder,
-    private api: ApiService, 
+    private api: ApiService,
     private router: Router
   ) {
     this.createProductForm = this.fb.group({
       name: ['', Validators.required],
       description: ['', Validators.required],
       sku: ['', Validators.required],
-      cost: [0, [Validators.required, Validators.min(0), Validators.pattern(/^\d+(\.\d{1,2})?$/)]],
+      cost: [
+        0,
+        [
+          Validators.required,
+          Validators.min(0),
+          Validators.pattern(/^\d+(\.\d{1,2})?$/),
+        ],
+      ],
       profile: this.fb.group({
         type: 'furniture',
         available: true,
-        backlog: ''
-      })
+        backlog: '',
+      }),
     });
   }
 
@@ -37,7 +44,7 @@ export class CreateProductFormComponent {
         () => {
           this.router.navigate(['/library']);
         },
-        error => {
+        (error) => {
           console.error('Error creating product:', error);
         }
       );

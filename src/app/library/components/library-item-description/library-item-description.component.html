@@ -1,14 +1,14 @@
 <div class="contaienr">
-    <div  class="cards-container">
-        <div *ngIf="item$ | async" class="card-item">
-            <p>Id: {{ (item$ | async)?.id }}</p>
-            <p>Name: {{ (item$ | async)?.name }}</p>
-            <p>description: {{ (item$ | async)?.description }}</p>
-            <p>sku: {{ (item$ | async)?.sku }}</p>
-            <p>cost: {{ (item$ | async)?.cost }}</p>
-            <p>profile: {{ (item$ | async)?.profile!.type }}</p>
-            <p>available: {{ (item$ | async)?.profile!.available }}</p>
-            <p>backlog: {{ (item$ | async)?.profile!.backlog }}</p>
-        </div>
+  <div class="cards-container">
+    <div *ngIf="item$ | async" class="card-item">
+      <p>Id: {{ (item$ | async)?.id }}</p>
+      <p>Name: {{ (item$ | async)?.name }}</p>
+      <p>description: {{ (item$ | async)?.description }}</p>
+      <p>sku: {{ (item$ | async)?.sku }}</p>
+      <p>cost: {{ (item$ | async)?.cost }}</p>
+      <p>profile: {{ ((item$ | async)?.profile)!.type }}</p>
+      <p>available: {{ ((item$ | async)?.profile)!.available }}</p>
+      <p>backlog: {{ ((item$ | async)?.profile)!.backlog }}</p>
     </div>
+  </div>
 </div>

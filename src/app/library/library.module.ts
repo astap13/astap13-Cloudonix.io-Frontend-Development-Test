@@ -12,12 +12,8 @@ import { LibraryItemEditModeProfileComponent } from './components/library-item-e
     LibraryComponent,
     LibraryItemDescriptionComponent,
     LibraryItemEditModeComponent,
-    LibraryItemEditModeProfileComponent
+    LibraryItemEditModeProfileComponent,
   ],
-  imports: [
-    CommonModule,
-    LibraryRoutingModule,
-    ReactiveFormsModule
-  ]
+  imports: [CommonModule, LibraryRoutingModule, ReactiveFormsModule],
 })
 export class LibraryModule {}

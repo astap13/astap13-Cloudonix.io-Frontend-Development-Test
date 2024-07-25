@@ -6,17 +6,13 @@ import { CreateProductComponent } from './create-product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateProductFormComponent } from './components/create-product-form/create-product-form.component';
 
-
 @NgModule({
-  declarations: [
-    CreateProductComponent,
-    CreateProductFormComponent
-  ],
+  declarations: [CreateProductComponent, CreateProductFormComponent],
   imports: [
     CommonModule,
     CreateProductRoutingModule,
     ReactiveFormsModule,
-    FormsModule
-  ]
+    FormsModule,
+  ],
 })
-export class CreateProductModule { }
+export class CreateProductModule {}

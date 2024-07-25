@@ -8,9 +8,8 @@ describe('LibraryItemEditModeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LibraryItemEditModeComponent]
-    })
-    .compileComponents();
+      declarations: [LibraryItemEditModeComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(LibraryItemEditModeComponent);
     component = fixture.componentInstance;

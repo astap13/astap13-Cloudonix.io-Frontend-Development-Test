@@ -62,7 +62,7 @@ select {
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
   *,
   *::before,
@@ -74,67 +74,69 @@ select {
   }
 }
 
-
 //Global styles
 
 .container {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    max-width: 1440px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  max-width: 1440px;
 }
 
+//Card styles
+
 .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    width: 100%;
-  }
-  
-  .card-item {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 200px; 
-    text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  
-  .card-item-hover:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card-item p {
-    margin: 8px 0;
-    font-size: 14px;
-    color: #333;
-  }
-  
-  .card-item p:first-child {
-    font-weight: bold;
-    color: #007bff;
-  }
-  
-  .card-item p:nth-child(2) {
-    color: #6c757d; 
-  }
-  
-  .card-item p:nth-child(3) {
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .card-item p:last-child {
-    color: #28a745; 
-    font-weight: bold;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+.card-item {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.card-item-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-item p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.card-item p:first-child {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.card-item p:nth-child(2) {
+  color: #6c757d;
+}
+
+.card-item p:nth-child(3) {
+  font-weight: bold;
+  color: #333;
+}
+
+.card-item p:last-child {
+  color: #28a745;
+  font-weight: bold;
+}
 ///btn styles
 
-
-button{
+button {
   padding: 5px 10px;
   background-color: #3498db;
   color: white;
@@ -153,11 +155,10 @@ button[type="submit"]:hover {
   background-color: #45a049;
 }
 
-
 button[type="submit"] {
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
 }
 
 .btn-container {
@@ -189,6 +190,3 @@ select {
 input[type="checkbox"] {
   margin-left: 5px;
 }
-
-
-

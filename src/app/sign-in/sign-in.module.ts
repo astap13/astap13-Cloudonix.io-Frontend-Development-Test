@@ -5,16 +5,13 @@ import { SignInRoutingModule } from './sign-in-routing.module';
 import { SignInComponent } from './sign-in.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
 @NgModule({
-  declarations: [
-    SignInComponent
-  ],
+  declarations: [SignInComponent],
   imports: [
     CommonModule,
-    SignInRoutingModule, 
-    ReactiveFormsModule, 
-    FormsModule
-  ]
+    SignInRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+  ],
 })
-export class SignInModule { }
+export class SignInModule {}

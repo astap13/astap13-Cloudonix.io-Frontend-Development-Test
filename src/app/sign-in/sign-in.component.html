@@ -1,10 +1,10 @@
 <div class="container">
-    <form action="" (ngSubmit)="onSubmit()">
-        <label for="name">Your key:</label>
-        <input id="name" type="text" [formControl]="name">
-        <div *ngIf="name.invalid && (name.dirty || name.touched)">
-            <span class="error">{{ nameErrorMessage }}</span>
-        </div>
-        <button type="submit" [disabled]="name.invalid">Submit</button>
-    </form>
+  <form action="" (ngSubmit)="onSubmit()">
+    <label for="name">Your key:</label>
+    <input id="name" type="text" [formControl]="name" />
+    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+      <span class="error">{{ nameErrorMessage }}</span>
+    </div>
+    <button type="submit" [disabled]="name.invalid">Submit</button>
+  </form>
 </div>

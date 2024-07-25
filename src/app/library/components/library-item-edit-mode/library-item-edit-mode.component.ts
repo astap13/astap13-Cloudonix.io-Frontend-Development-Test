@@ -8,7 +8,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-library-item-edit-mode',
   templateUrl: './library-item-edit-mode.component.html',
-  styleUrls: ['./library-item-edit-mode.component.scss']
+  styleUrls: ['./library-item-edit-mode.component.scss'],
 })
 export class LibraryItemEditModeComponent implements OnInit {
   editProductForm: FormGroup;
@@ -26,12 +26,19 @@ export class LibraryItemEditModeComponent implements OnInit {
     this.editProductForm = this.fb.group({
       name: ['', Validators.required],
       description: ['', Validators.required],
-      cost: [0, [Validators.required, Validators.min(0), Validators.pattern(/^\d+(\.\d{1,2})?$/)]],
+      cost: [
+        0,
+        [
+          Validators.required,
+          Validators.min(0),
+          Validators.pattern(/^\d+(\.\d{1,2})?$/),
+        ],
+      ],
       profile: this.fb.group({
         type: 'furniture',
         available: true,
-        backlog: ''
-      })
+        backlog: '',
+      }),
     });
   }
 
@@ -46,7 +53,7 @@ export class LibraryItemEditModeComponent implements OnInit {
       )
     );
 
-    this.item$.subscribe(product => {
+    this.item$.subscribe((product) => {
       this.product = product;
       this.itemId = product.id;
       this.editProductForm.patchValue({
@@ -56,8 +63,8 @@ export class LibraryItemEditModeComponent implements OnInit {
         profile: {
           type: product.profile?.type,
           available: product.profile?.available,
-          backlog: product.profile?.backlog
-        }
+          backlog: product.profile?.backlog,
+        },
       });
     });
   }
@@ -68,18 +75,24 @@ export class LibraryItemEditModeComponent implements OnInit {
 
       const updatedProduct: any = {};
 
-      if (formValue.name !== this.product.name) updatedProduct.name = formValue.name;
-      if (formValue.description !== this.product.description) updatedProduct.description = formValue.description;
-      if (formValue.cost !== this.product.cost) updatedProduct.cost = formValue.cost;
-      if (formValue.profile.type !== this.product.profile?.type) updatedProduct.profile = { type: formValue.profile.type };
-      if (formValue.profile.available !== this.product.profile?.available) updatedProduct.profile = { available: formValue.profile.available };
-      if (formValue.profile.backlog !== this.product.profile?.backlog) updatedProduct.profile = { backlog: formValue.profile.backlog };
+      if (formValue.name !== this.product.name)
+        updatedProduct.name = formValue.name;
+      if (formValue.description !== this.product.description)
+        updatedProduct.description = formValue.description;
+      if (formValue.cost !== this.product.cost)
+        updatedProduct.cost = formValue.cost;
+      if (formValue.profile.type !== this.product.profile?.type)
+        updatedProduct.profile = { type: formValue.profile.type };
+      if (formValue.profile.available !== this.product.profile?.available)
+        updatedProduct.profile = { available: formValue.profile.available };
+      if (formValue.profile.backlog !== this.product.profile?.backlog)
+        updatedProduct.profile = { backlog: formValue.profile.backlog };
 
       this.api.updateProduct(this.itemId, updatedProduct).subscribe(
         () => {
           this.router.navigate(['/library', this.itemId]);
         },
-        error => {
+        (error) => {
           console.error('Error updating product:', error);
         }
       );

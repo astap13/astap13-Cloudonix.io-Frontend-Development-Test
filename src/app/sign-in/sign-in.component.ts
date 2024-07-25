@@ -5,13 +5,13 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.scss']
+  styleUrls: ['./sign-in.component.scss'],
 })
-export class SignInComponent{
+export class SignInComponent {
   constructor(private router: Router) {}
-onSubmit() {
-this.router.navigate(['/library'])
-}
+  onSubmit() {
+    this.router.navigate(['/library']);
+  }
   name = new FormControl('', Validators.required);
 
   get nameErrorMessage() {

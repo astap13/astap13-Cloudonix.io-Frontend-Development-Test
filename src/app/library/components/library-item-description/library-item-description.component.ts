@@ -7,17 +7,22 @@ import { Product } from '../../product.interface';
 @Component({
   selector: 'app-library-item-description',
   templateUrl: './library-item-description.component.html',
-  styleUrl: './library-item-description.component.scss'
+  styleUrl: './library-item-description.component.scss',
 })
 export class LibraryItemDescriptionComponent {
   item$!: Observable<Product>;
-  
-  constructor( private route: ActivatedRoute, public api: ApiService, private router: Router){}
+
+  constructor(
+    private route: ActivatedRoute,
+    public api: ApiService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.item$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
-        this.api.getProductById(params.get('id')!))
+        this.api.getProductById(params.get('id')!)
+      )
     );
   }
 
@@ -27,11 +32,10 @@ export class LibraryItemDescriptionComponent {
         () => {
           this.router.navigate(['/library']);
         },
-        error => {
+        (error) => {
           console.error('Error deleting product:', error);
         }
       );
     }
   }
-  
 }

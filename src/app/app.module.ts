@@ -9,16 +9,9 @@ import { HeaderComponent } from './core/header/header.component';
 import { LibraryItemEditModeComponent } from './library/components/library-item-edit-mode/library-item-edit-mode.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule, 
-    HttpClientModule
-  ],
+  declarations: [AppComponent, HeaderComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
