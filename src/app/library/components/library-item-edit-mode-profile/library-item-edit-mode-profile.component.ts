@@ -14,7 +14,7 @@ export class LibraryItemEditModeProfileComponent {
   ngOnInit(): void {
     if (!this.profileForm) {
       this.profileForm = this.fb.group({
-        type: '',
+        type: 'furniture',
         available: true,
         backlog: ''
       });
