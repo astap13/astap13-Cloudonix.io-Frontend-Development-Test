@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class SignInComponent {
   constructor(private router: Router) {}
   onSubmit() {
+    localStorage.setItem('auth', 'true')
     this.router.navigate(['/library']);
   }
   name = new FormControl('', Validators.required);
